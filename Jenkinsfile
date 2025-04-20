@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent {label 'java'}
  
     stages {
         stage('git clone') {
@@ -7,9 +7,10 @@ pipeline {
                 git 'https://github.com/Kumarbgm16/java-azure-project.git'
             }
         }
-        stage('maven version') {
+        stage('maven install') {
             steps {
-                sh 'mvn --version'
+                sh 'sudo apt install maven'
+                sh 'maven --version'
             }
         }
 
