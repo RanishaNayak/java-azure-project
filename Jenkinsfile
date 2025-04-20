@@ -7,9 +7,9 @@ pipeline {
                 git 'https://github.com/Kumarbgm16/java-azure-project.git'
             }
         }
-        stage('maven project package') {
+        stage('maven version') {
             steps {
-                sh 'mvn clean package'
+                sh 'mvn --version'
             }
         }
 
